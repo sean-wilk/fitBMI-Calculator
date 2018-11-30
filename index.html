@@ -1,0 +1,224 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500" rel="stylesheet">
+
+</head>
+
+<body>
+  <!--[if lte IE 9]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+  <!-- Add your site or application content here -->
+  <div id="bmi-container">
+    <h1 class="bmi-title" id="calc-title">BMI CALCULATOR</h1>
+    <div id="bmi-calc">
+      <div class="bmi-calc-unit">
+        <p>Measurement System</p>
+        <div class="btn-group filter-options">
+  				<button class="btn active" data-group="imperial">Imperial</button>
+  				<button class="btn" data-group="metric">Metric</button>
+        </div>
+      </div>
+      <div class="bmi-calc-input">
+        <div id="bmi-imperial">
+          <div class="height">
+            <p>Height</p>
+            <div class="dbl-input">
+              <div class="input-unit" id="height-ft">
+                <input type="text" id="height-ft-input"/>
+                <p>ft</p>
+              </div>
+              <div class="input-unit" id="height-in">
+                <input type="text" id="height-in-input"/>
+                <p>in</p>
+              </div>
+            </div>
+          </div>
+          <div class="weight">
+            <p>Weight</p>
+            <div class="input-unit" id="weight-lb">
+              <input type="text" id="weight-lb-input"/>
+              <p>lb</p>
+            </div>
+          </div>
+        </div>
+        <div id="bmi-metric" style="display: none;">
+          <div class="height">
+            <p>Height</p>
+            <div class="input-unit" id="height-cm">
+              <input type="text" id="height-cm-input"/>
+              <p>cm</p>
+            </div>
+          </div>
+          <div class="weight">
+            <p>Weight</p>
+            <div class="input-unit" id="weight-kg">
+              <input type="text" id="weight-kg-input"/>
+              <p>kg</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bmi-submit">
+        <input id="btn-calculate" type="submit" value="CALCULATE" data-unit="imperial">
+      </div>
+    </div>
+    <div id="bmi-result" style="display: none;">
+      <h1 class="bmi-title">YOUR BMI IS <span id="result-output">?</span></h1>
+      <h2 class="bmi-subtitle">WHICH IS CONSIDERED</h2>
+      <div class="ranking-container">
+        <span class="bmi-ranking" id='bmi-rank'></span>
+      </div>
+      <div class="graph-container">
+        <div class="graph-item start" id="item1"></div>
+        <div class="graph-item underweight" id="item2"></div>
+        <div class="graph-item underweight" id="item3"></div>
+        <div class="graph-item underweight" id="item4"></div>
+        <div class="graph-item underweight" id="item5"></div>
+        <div class="graph-item underweight" id="item6"></div>
+        <div class="graph-item underweight" id="item7"></div>
+        <div class="graph-item underweight" id="item8"></div>
+        <div class="graph-item normal" id="item9"></div>
+        <div class="graph-item normal" id="item10"></div>
+        <div class="graph-item normal" id="item11"></div>
+        <div class="graph-item normal" id="item12"></div>
+        <div class="graph-item normal" id="item13"></div>
+        <div class="graph-item normal" id="item14"></div>
+        <div class="graph-item normal" id="item15"></div>
+        <div class="graph-item normal" id="item16"></div>
+        <div class="graph-item normal" id="item17"></div>
+        <div class="graph-item normal" id="item18"></div>
+        <div class="graph-item normal" id="item19"></div>
+        <div class="graph-item normal" id="item20"></div>
+        <div class="graph-item normal" id="item21"></div>
+        <div class="graph-item overweight" id="item22"></div>
+        <div class="graph-item overweight" id="item23"></div>
+        <div class="graph-item overweight" id="item24"></div>
+        <div class="graph-item overweight" id="item25"></div>
+        <div class="graph-item overweight" id="item26"></div>
+        <div class="graph-item overweight" id="item27"></div>
+        <div class="graph-item overweight" id="item28"></div>
+        <div class="graph-item overweight" id="item29"></div>
+        <div class="graph-item overweight" id="item30"></div>
+        <div class="graph-item overweight" id="item31"></div>
+        <div class="graph-item obese" id="item32"></div>
+        <div class="graph-item obese" id="item33"></div>
+        <div class="graph-item obese" id="item34"></div>
+        <div class="graph-item obese" id="item35"></div>
+        <div class="graph-item obese" id="item36"></div>
+        <div class="graph-item obese" id="item37"></div>
+        <div class="graph-item obese" id="item38"></div>
+        <div class="graph-item obese" id="item39"></div>
+        <div class="graph-item obese" id="item40"></div>
+        <div class="graph-item obese" id="item41"></div>
+        <div class="graph-item obese" id="item42"></div>
+        <div class="graph-item obese" id="item43"></div>
+        <div class="graph-item obese" id="item44"></div>
+        <div class="graph-item obese" id="item45"></div>
+        <div class="graph-item obese" id="item46"></div>
+        <div class="graph-item obese" id="item47"></div>
+        <div class="graph-item obese" id="item48"></div>
+        <div class="graph-item obese" id="item49"></div>
+        <div class="graph-item obese" id="item50"></div>
+        <div class="graph-item obese" id="item51"></div>
+        <div class="graph-item obese" id="item52"></div>
+        <div class="graph-item obese" id="item53"></div>
+        <div class="graph-item obese" id="item54"></div>
+        <div class="graph-item obese" id="item55"></div>
+        <div class="graph-item obese" id="item56"></div>
+        <div class="graph-item obese" id="item57"></div>
+        <div class="graph-item obese" id="item58"></div>
+        <div class="graph-item obese" id="item59"></div>
+        <div class="graph-item obese" id="item60"></div>
+        <div class="graph-item obese" id="item61"></div>
+        <div class="graph-item end" id="item62"></div>
+      </div>
+      <div class="graph-scale">
+        <div class="scale-container" id="scale01">
+          <p style="padding-left: 8px;">15</p>
+        </div>
+        <div class="scale-container" id="scale02">
+          <p>18.5</p>
+        </div>
+        <div class="scale-container" id="scale03">
+          <p>25</p>
+        </div>
+        <div class="scale-container" id="scale04">
+          <p>30</p>
+          <p style="padding-right: 8px;">45</p>
+        </div>
+      </div>
+      <p id="bmi-calculation">For you to be considered a healthy weight, you will
+need to <span id="bmi-calc-direction">?</span> at least <span id="bmi-calc-amount">?</span>.</p>
+      <p id="bmi-disclaimer">
+        While your BMI can be a good indicator of health, please note that if you are someone who is active with a lot of muscle mass, this calculation may not be an accurate measure of your actual well-being.
+      </p>
+      <div class="bmi-accordion">
+          <div class="accordian-underweight bmi-accordian-container">
+            <div class="bmi-accordion-header">
+              <div class="bmi-accordian-score"> < 18.5 </div>
+              <div class="bmi-accordian-rank">Underweight</div>
+            </div>
+            <div class="bmi-accordion-content accordian-underweight">Based on your BMI, you would be categorized as “underweight”. Depending upon how low your BMI is, this could mean that it might be helpful for you to intake more calories, vitamins, and nutrients to ensure your body has the energy it needs for you to operate effectively.
+            </div>
+          </div>
+
+          <div class="accordian-normal bmi-accordian-container">
+            <div class="bmi-accordion-header">
+              <div class="bmi-accordian-score"> 18.5 - 24.9 </div>
+              <div class="bmi-accordian-rank">Normal Weight</div>
+            </div>
+            <div class="bmi-accordion-content accordian-normal">Based on your BMI, you can be considered a normal weight. This likely means your body is handling calories efficiently, you get some form of consistent exercise, and do not carry a lot of fat mass. It should be noted that, even if your weight is considered normal, there are tremendous benefits to overall health if you eat a healthy diet and get some form of exercise if you are physically capable and are well enough to do so.
+            </div>
+          </div>
+
+          <div class="accordian-overweight bmi-accordian-container">
+            <div class="bmi-accordion-header">
+              <div class="bmi-accordian-score"> 25 - 29.9 </div>
+              <div class="bmi-accordian-rank">Overweight</div>
+            </div>
+            <div class="bmi-accordion-content accordian-overweight">Based on your BMI, you can be considered overweight. This likely means that you carry some amount of extra body fat and that you may be at risk for diseases such as diabetes. Eating a healthy diet and getting some form of exercise might be helpful for you to reach a lower BMI. If you are a bodybuilder or someone who lifts weights regularly, it is likely your BMI is not accurate to your actual fitness level or health.
+            </div>
+          </div>
+
+          <div class="accordian-obese bmi-accordian-container">
+            <div class="bmi-accordion-header">
+              <div class="bmi-accordian-score"> > 30 </div>
+              <div class="bmi-accordian-rank">Obese</div>
+            </div>
+            <div class="bmi-accordion-content accordian-obese">Based on your BMI, you can be considered obese. This likely means you carry a large amount of body fat that could eventually cause health problems such as diabetes, heart disease, or high blood pressure down the road. You would likely significantly benefit from a diet change and getting some form of consistent exercise. If you are a bodybuilder, your BMI designation could be incorrect. If not, a visit to your family physician might be helpful for you to better understand what risks you may have.</div>
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/vendor/modernizr-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')</script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+</body>
+
+</html>

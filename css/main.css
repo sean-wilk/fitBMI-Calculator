@@ -1,0 +1,960 @@
+/*! HTML5 Boilerplate v6.1.0 | MIT License | https://html5boilerplate.com/ */
+
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html {
+    color: #222;
+    background-color: #f9f9f9;
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Vendor-prefixed and regular ::selection selectors cannot be combined:
+ * https://stackoverflow.com/a/16982510/7133471
+ *
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+/* ==========================================================================
+   Browser Upgrade Prompt
+   ========================================================================== */
+
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Calculator CSS
+   ========================================================================== */
+
+/* Title styling */
+
+#bmi-container {
+  font-family: Montserrat, sans-serif;
+  margin-bottom: 50px;
+}
+
+.bmi-title {
+  text-align: center;
+  font-family: Montserrat, sans-serif;
+  font-weight: 400;
+  margin: 32px 0;
+}
+
+@media only screen and (min-width: 593px) {
+  .bmi-title {
+    font-size: 38px;
+    line-height: 48px;
+  }
+}
+
+@media only screen and (max-width: 592px) {
+  .bmi-title {
+    font-size: 28px;
+    line-height: 36px;
+  }
+}
+
+/* Entire calculator styling */
+#bmi-container #bmi-calc {
+  border-radius: 20px;
+  -webkit-box-shadow: 0px 12px 60px 0px rgba(69,70,70,0.1);
+  -moz-box-shadow: 0px 12px 60px 0px rgba(69,70,70,0.1);
+  box-shadow: 0px 12px 60px 0px rgba(69,70,70,0.1);
+}
+
+@media only screen and (min-width: 593px) {
+  #bmi-container #bmi-calc {
+    width: 592px;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (max-width: 592px) {
+  #bmi-container #bmi-calc {
+    width: calc(100vw - 64px);
+    margin: 0 auto;
+  }
+}
+
+/* BMI calculator top section styling */
+#bmi-container #bmi-calc .bmi-calc-unit {
+  width: 100%;
+  font-family: Montserrat, sans-serif;
+  font-size: 18px;
+  font-weight: 300 !important;
+  color: #ffffff;
+  border-radius: 20px 20px 0 0;
+  background-image: linear-gradient(to right, #34c1f7, #41c9f8, #4fd1f9, #5dd9fa, #6ce1fb);
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  box-sizing:border-box;
+}
+
+@media only screen and (min-width: 593px) {
+  #bmi-container #bmi-calc .bmi-calc-unit {
+    height: 64px;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+  }
+}
+
+@media only screen and (max-width: 592px) {
+  #bmi-container #bmi-calc .bmi-calc-unit {
+    height: 128px;
+    flex-flow: column nowrap;
+    justify-content: center;
+  }
+
+  #bmi-container #bmi-calc .bmi-calc-unit p {
+    margin-top: 0;
+  }
+}
+
+#bmi-container #bmi-calc .bmi-calc-unit .btn-group {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+#bmi-container #bmi-calc .bmi-calc-unit .btn-group button {
+  height: 36px;
+  border-radius: 18px;
+  border: 1px solid #ffffff;
+  background-color: rgba(0,0,0,0);
+  color: #ffffff;
+  padding: 0 16px;
+  margin: 0 8px;
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 380px) and (max-width: 592px) {
+  #bmi-container #bmi-calc .bmi-calc-unit .btn-group button {
+    min-width: 128px;
+  }
+}
+
+@media only screen and (max-width: 380px) {
+  #bmi-container #bmi-calc .bmi-calc-unit .btn-group button {
+    min-width: 96px;
+    margin: 0 8px;
+  }
+}
+
+#bmi-container #bmi-calc .bmi-calc-unit .btn-group button.active {
+  background-color: #ffffff;
+  color: #50d1f9;
+  font-weight: 500;
+}
+
+/* BMI calculator input section styling */
+
+#bmi-container #bmi-calc .input-unit {
+  height: 64px;
+  border: 1px solid #d2d2d2;
+  border-radius: 13.5px;
+  background-color: #ffffff;
+  padding: 0 16px;
+  box-sizing:border-box;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+}
+
+#bmi-container #bmi-calc .input-unit input {
+  height: 100%;
+  width: calc(100% - 32px);
+  border: none;
+  background-color: rgba(0,0,0,0);
+  box-sizing:border-box;
+  font-weight: 500;
+  color: #363636;
+  font-size: 24px;
+}
+
+#bmi-container #bmi-calc .input-unit p {
+  width: 32px;
+  color: #848484;
+  text-align: right;
+}
+
+#bmi-container #bmi-calc .bmi-calc-input {
+  font-family: Montserrat, sans-serif;
+  font-size: 18px;
+  font-weight: 300 !important;
+  color: #272727;
+  background-color: #fcfcfc;
+}
+
+#bmi-container #bmi-calc .bmi-calc-input > div {
+  width: 100%;
+  min-height: 176px;
+  box-sizing:border-box;
+  padding: 16px 32px 32px 32px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+}
+
+@media only screen and (min-width: 593px) {
+  #bmi-container #bmi-calc .bmi-calc-input > div {
+    flex-flow: row nowrap;
+    justify-content: space-between;
+  }
+
+  #bmi-container #bmi-calc .bmi-calc-input > div > div {
+    width: 47.5%;
+    box-sizing:border-box;
+  }
+}
+
+@media only screen and (max-width: 592px) {
+  #bmi-container #bmi-calc .bmi-calc-input > div {
+    flex-flow: column nowrap;
+    justify-content: center;
+  }
+
+  #bmi-container #bmi-calc .bmi-calc-input > div > div {
+    width: 95%;
+    box-sizing:border-box;
+  }
+}
+
+#bmi-container #bmi-calc .bmi-calc-input .dbl-input{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+}
+
+#bmi-container #bmi-calc .bmi-calc-input .dbl-input .input-unit{
+  width: 50%;
+  box-sizing:border-box;
+}
+
+#bmi-container #bmi-calc .bmi-calc-input .dbl-input #height-ft{
+  margin-right: 2px;
+}
+
+#bmi-container #bmi-container #bmi-calc .bmi-calc-input .dbl-input #height-in{
+  margin-left: 2px;
+}
+
+/* BMI calculator submit bottom section styling */
+
+#bmi-container #bmi-calc .bmi-submit {
+  min-height: 128px;
+  width: 100%;
+  padding: 0 32px;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  border-radius: 0 0 20px 20px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+#bmi-container #bmi-calc .bmi-submit #btn-calculate {
+  box-sizing: border-box;
+  background-image: linear-gradient(to right, #82c807, #8cd215, #97dd20, #a1e729, #acf231);
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+@media only screen and (min-width: 593px) {
+#bmi-container #bmi-calc .bmi-submit #btn-calculate {
+    height: 64px;
+    padding: 0 64px;
+    border-radius: 32px;
+  }
+}
+
+@media only screen and (max-width: 592px) {
+#bmi-container #bmi-calc .bmi-submit #btn-calculate {
+    height: 64px;
+    padding: 0 32px;
+    border-radius: 32px;
+  }
+}
+
+/* ==========================================================================
+   Results CSS
+   ========================================================================== */
+/* Results Header CSS */
+#bmi-container #bmi-result #result-output {
+  font-weight: 500;
+}
+
+/* Results Subheader CSS */
+#bmi-container .bmi-subtitle {
+  text-align: center;
+  font-weight: 300;
+  font-size: 18px;
+  color: #666666;
+}
+
+/* Results Ranking CSS */
+#bmi-container .ranking-container {
+  text-align: center;
+}
+
+#bmi-container .bmi-ranking {
+  height: 32px;
+  border-radius: 10px;
+  padding: 0 10px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  text-align: center;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 32px;
+  color: #ffffff;
+  text-transform: uppercase;
+  cursor: default;
+}
+
+#bmi-container .rank-below-chart {
+  background-color: #009eac;
+}
+
+#bmi-container .rank-underweight {
+  background-color: #00d7ea;
+}
+
+#bmi-container .rank-normal {
+  background-color: #99df1e;
+}
+
+#bmi-container .rank-overweight {
+  background-color: #efd324;
+}
+
+#bmi-container .rank-obese {
+  background-color: #f82538;
+}
+
+#bmi-container .rank-above-chart {
+  background-color: #ad0021;
+}
+
+/* BMI Graph CSS */
+#bmi-container #bmi-result .graph-container {
+  padding: 0 32px;
+  margin: 32px auto 0 auto;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  -webkit-box-shadow: 0px 12px 60px 0px rgba(69,70,70,0.1);
+  -moz-box-shadow: 0px 12px 60px 0px rgba(69,70,70,0.1);
+  box-shadow: 0px 12px 60px 0px rgba(69,70,70,0.1);
+}
+
+@media only screen and (min-width: 769px) {
+  #bmi-container #bmi-result .graph-container {
+    width: 720px;
+    height: 64px;
+    border-radius: 10px 10px 0 0;
+  }
+  #bmi-container #bmi-result .graph-container .graph-item {
+    min-width: 8px;
+    width: 8px;
+    height: 24px;
+    border-radius: 4px;
+    position: relative;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #bmi-container #bmi-result .graph-container {
+    width: 100vw;
+    height: 128px;
+    border-radius: 0;
+  }
+  #bmi-container #bmi-result .graph-container .graph-item {
+    min-width: 4px;
+    width: 4px;
+    height: 48px;
+    border-radius: 2px;
+    position: relative;
+  }
+}
+
+#bmi-container #bmi-result .graph-container .graph-item.start {
+  background-image: linear-gradient(to bottom, #3d9097, #35868e, #2c7d84, #23737b, #1a6a72);
+}
+
+#bmi-container #bmi-result .graph-container .graph-item.underweight {
+  background-image: linear-gradient(to bottom, #40d5e2, #37cad7, #2ec0cd, #23b5c2, #17abb8);
+}
+
+#bmi-container #bmi-result .graph-container .graph-item.normal {
+  background-image: linear-gradient(to bottom, #adf332, #a3e92a, #99df22, #90d519, #86cb0d);
+}
+
+#bmi-container #bmi-result .graph-container .graph-item.overweight {
+  background-image: linear-gradient(to bottom, #f3ec36, #f2d826, #f0c418, #ecb00c, #e69d06);
+}
+
+#bmi-container #bmi-result .graph-container .graph-item.obese {
+  background-image: linear-gradient(to bottom, #ff4a26, #fd3d2f, #fb3038, #f71f40, #f30547);
+}
+
+#bmi-container #bmi-result .graph-container .graph-item.end {
+  background-image: linear-gradient(to bottom, #cf1f24, #ce1a29, #cd142d, #cc0e31, #cb0635);
+}
+
+/* BMI Scale CSS */
+
+#bmi-container #bmi-result .graph-scale {
+  width: 720px;
+  padding: 0 32px;
+  margin: 0 auto 32px auto;
+  box-sizing: border-box;
+  height: 24px;
+  border-radius: 0 0 10px 10px;
+  background-color: #2a2a2a;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  -webkit-box-shadow: 0px 12px 60px 0px rgba(69,70,70,0.1);
+  -moz-box-shadow: 0px 12px 60px 0px rgba(69,70,70,0.1);
+  box-shadow: 0px 12px 60px 0px rgba(69,70,70,0.1);
+}
+
+@media only screen and (min-width: 769px) {
+  #bmi-container #bmi-result .graph-scale {
+    width: 720px;
+    height: 24px;
+    border-radius: 0 0 10px 10px;
+  }
+  #bmi-container #bmi-result .graph-scale .scale-container {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #bmi-container #bmi-result .graph-scale {
+    width: 100vw;
+    height: 32px;
+    border-radius: 0;
+  }
+
+  #bmi-container #bmi-result .graph-scale .scale-container {
+    font-size: 18px;
+  }
+}
+
+#bmi-container #bmi-result .graph-scale .scale-container {
+  color: #a0a0a0;
+  font-weight: 500;
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+}
+
+#bmi-container #bmi-result .graph-scale #scale01 {
+  flex-grow: 6.5;
+}
+
+#bmi-container #bmi-result .graph-scale #scale02 {
+  flex-grow: 12;
+}
+
+#bmi-container #bmi-result .graph-scale #scale03 {
+  flex-grow: 9;
+}
+
+#bmi-container #bmi-result .graph-scale #scale04 {
+  flex-grow: 30;
+}
+
+/* BMI Graph Hover Box CSS */
+
+#hover-box {
+  position: absolute;
+  border-radius: 10px;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+@media only screen and (min-width: 769px) {
+  #hover-box {
+    height: 32px;
+    width: 64px;
+    top: -30px;
+    left: calc(50% - 32px);
+    font-size: 16px;
+    line-height: 32px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #hover-box {
+    height: 48px;
+    width: 96px;
+    top: -46px;
+    left: calc(50% - 48px);
+    font-size: 24px;
+    line-height: 48px;
+  }
+}
+
+/* BMI Calculation & Disclaimer CSS */
+
+#bmi-calculation {
+  font-weight: 300;
+  color: #848484;
+}
+
+@media only screen and (min-width: 769px) {
+  #bmi-calculation {
+    max-width: 480px;
+    margin: 0 auto;
+    font-size: 18px;
+    line-height: 30px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #bmi-calculation {
+    max-width: 100vw;
+    margin: 0 32px;
+    font-size: 24px;
+    line-height: 36px;
+  }
+}
+
+#bmi-calculation #bmi-calc-direction, #bmi-calculation #bmi-calc-amount {
+  font-weight: 500;
+  color: #313131;
+}
+
+#bmi-disclaimer {
+  font-weight: 300;
+  color: #bababa;
+}
+
+@media only screen and (min-width: 769px) {
+  #bmi-disclaimer {
+    max-width: 480px;
+    margin: 32px auto;
+    font-size: 14px;
+    line-height: 24px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #bmi-disclaimer {
+    max-width: 100vw;
+    margin: 32px;
+    font-size: 18px;
+    line-height: 28px;
+  }
+}
+
+/* BMI Accordian */
+
+@media only screen and (min-width: 769px) {
+  .bmi-accordion {
+      max-width: 480px;
+      margin: 0 auto;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .bmi-accordion {
+      max-width: 100vw;
+      margin: 0 32px;
+  }
+}
+
+.bmi-accordion .bmi-accordian-container {
+    margin: 8px 0;
+    -webkit-box-shadow: 0px 12px 60px 0px rgba(69,70,70,0.1);
+    -moz-box-shadow: 0px 12px 60px 0px rgba(69,70,70,0.1);
+    box-shadow: 0px 12px 60px 0px rgba(69,70,70,0.1);
+    border-radius: 4px;
+}
+
+.bmi-accordion-header {
+    border-bottom: 1px solid #DDE0E7;
+    color: #2a313a;
+    cursor: pointer;
+    height: 40px;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 40px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+    border-radius: 4px;
+}
+
+.bmi-accordion-header:hover {
+    background: #F6F7F9;
+}
+
+.bmi-accordion-content {
+    display: none;
+    border-bottom: 1px solid #DDE0E7;
+    background: #F6F7F9;
+    padding: 1.5rem;
+    color: #4a5666;
+    border-radius: 0 0 4px 4px;
+}
+
+.bmi-accordion-header .bmi-accordian-rank::before {
+    border-style: solid;
+    border-width: 0.25em 0.25em 0 0;
+    content: '';
+    display: inline-block;
+    float: right;
+    height: 0.45em;
+    right: 0.15em;
+    position: relative;
+    vertical-align: top;
+    width: 0.45em;
+    top: 11px;
+	  transform: rotate(135deg);
+}
+
+.active.bmi-accordion-header .bmi-accordian-rank::before {
+    top: 17px;
+    transform: rotate(-45deg);
+}
+
+.active.bmi-accordion-content {
+    display: block;
+}
+
+.bmi-accordion-header .bmi-accordian-score {
+    width: 144px;
+    height: 40px;
+    padding: 0 16px;
+    color: #ffffff;
+    border-radius: 4px 0 0 4px;
+    font-weight: 500;
+}
+
+.accordian-underweight .bmi-accordion-header .bmi-accordian-score {
+    background-color: #00d7ea;
+}
+
+.accordian-normal .bmi-accordion-header .bmi-accordian-score {
+    background-color: #99df1e;
+}
+
+.accordian-overweight .bmi-accordion-header .bmi-accordian-score {
+    background-color: #efd324;
+}
+
+.accordian-obese .bmi-accordion-header .bmi-accordian-score {
+    background-color: #f82538;
+}
+
+.bmi-accordion-header .bmi-accordian-rank {
+    flex-grow: 1;
+    height: 40px;
+    color: #1b1b1b;
+    padding: 0 16px;
+    border-radius: 0 4px 4px 0;
+}
+
+.accordian-underweight .active.bmi-accordion-header .bmi-accordian-rank  {
+    background-color: #00d7ea;
+    color: #ffffff;
+}
+
+.accordian-normal .active.bmi-accordion-header .bmi-accordian-rank {
+    background-color: #99df1e;
+    color: #ffffff;
+}
+
+.accordian-overweight .active.bmi-accordion-header .bmi-accordian-rank {
+    background-color: #efd324;
+    color: #ffffff;
+}
+
+.accordian-obese .active.bmi-accordion-header .bmi-accordian-rank {
+    background-color: #f82538;
+    color: #ffffff;
+}
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers
+ */
+
+.hidden {
+    display: none !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ *
+ * 1. For long content, line feeds are not interpreted as spaces and small width
+ *    causes content to wrap 1 word per line:
+ *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+ */
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    white-space: nowrap; /* 1 */
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+    white-space: inherit;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+    visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+    /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 1.25dppx),
+       (min-resolution: 120dpi) {
+    /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   https://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster */
+        -webkit-box-shadow: none !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+
+    pre {
+        white-space: pre-wrap !important;
+    }
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    /*
+     * Printing Tables:
+     * http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
