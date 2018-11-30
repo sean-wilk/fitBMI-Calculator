@@ -20,11 +20,15 @@ $(document).on('click', '.bmi-calc-unit .btn-group button', function (e) {
     }
 });
 
-$(document).on('click', '#btn-calculate', function (e) {
-    //Display results page
-    $('#bmi-calc, #calc-title').fadeOut('fast', function(){
-        $('#bmi-result').fadeIn('fast');
-    });
+$(document).on('click', '#btn-calculate.calculate', function (e) {
+      //Changing button to a Reset Button & Showing Results
+      $('#btn-calculate').removeClass('calculate');
+      $('#btn-calculate').addClass('reset');
+      $('#btn-calculate').attr('value','Reset');
+      $('#bmi-result').fadeIn('slow');
+      $('html, body').animate({
+          scrollTop: ($('#bmi-result').offset().top)
+      },500);
 
     //Get BMI unit
     var bmiUnits = $('#btn-calculate').data('unit');
@@ -191,9 +195,43 @@ $(document).on('click', '#btn-calculate', function (e) {
     }
 });
 
- $(".bmi-accordion").on("click", ".bmi-accordion-header", function() {
-    $(this).toggleClass("active").next().slideToggle();
+$(document).on('click', '#btn-calculate.reset', function (e) {
+     //Changing button to a Calculate Button & Hiding Results
+     $('#btn-calculate').removeClass('reset');
+     $('#btn-calculate').addClass('calculate');
+     $('#btn-calculate').attr('value','Calculate');
+     $('#bmi-result').fadeOut('slow');
+
+     // Remove BMI Score, Rank & Classes
+     $('#result-output').html("");
+     $('#bmi-rank').removeClass('rank-underweight');
+     $('#bmi-rank').removeClass('rank-normal');
+     $('#bmi-rank').removeClass('rank-overweight');
+     $('#bmi-rank').removeClass('rank-obese');
+     $('#bmi-rank').html("");
+
+     // Remove hoverBox & inline CSS
+     $('#hover-box').remove();
+     $(".graph-item").removeAttr("style");
+
+     //Remove BMI calculation textarea
+     $('#bmi-calc-direction').html("");
+     $('#bmi-calc-amount').html("");
+
+     //Remove display:none from BMI calculation text
+     $('#bmi-calculation').removeAttr("style");
+
+     //Remove accordian active classes
+     $('.accordian-underweight, .accordian-underweight .bmi-accordion-header').removeClass('active');
+     $('.accordian-normal,.accordian-normal .bmi-accordion-header').removeClass('active');
+     $('.accordian-overweight, .accordian-overweight .bmi-accordion-header').removeClass('active');
+     $('.accordian-obese, .accordian-obese .bmi-accordion-header').removeClass('active');
+
  });
+
+$(".bmi-accordion").on("click", ".bmi-accordion-header", function() {
+   $(this).toggleClass("active").next().slideToggle();
+});
 
 
 
