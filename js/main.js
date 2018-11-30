@@ -165,7 +165,7 @@ $(document).on('click', '#btn-calculate', function (e) {
       if (bmiUnits == "metric") {
         calculationAmount = (18.5 - bmiResult) * heightMetric * heightMetric;
         calculationAmountRounded = round(calculationAmount,1);
-        calculationText = calculationAmountRounded.toString() + ' kilogram';
+        calculationText = calculationAmountRounded.toString() + ' kilograms';
         $('#bmi-calc-amount').html(calculationText);
       } else {
         calculationAmount = ((18.5 - bmiResult) * heightImperial * heightImperial)/703;
@@ -178,7 +178,7 @@ $(document).on('click', '#btn-calculate', function (e) {
       if (bmiUnits == "metric") {
         calculationAmount = (bmiResult - 25) * heightMetric * heightMetric;
         calculationAmountRounded = round(calculationAmount,1);
-        calculationText = calculationAmountRounded.toString() + ' kilogram';
+        calculationText = calculationAmountRounded.toString() + ' kilograms';
         $('#bmi-calc-amount').html(calculationText);
       } else {
         calculationAmount = ((bmiResult - 25) * heightImperial * heightImperial)/703;
