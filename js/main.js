@@ -227,6 +227,9 @@ $(document).on('click', '#btn-calculate.reset', function (e) {
      $('.accordian-overweight, .accordian-overweight .bmi-accordion-header').removeClass('active');
      $('.accordian-obese, .accordian-obese .bmi-accordion-header').removeClass('active');
 
+     //Remove display:none from BMI calculation text
+     $('.bmi-accordion-content').removeAttr("style");
+     $('.bmi-accordion-content').css({'display': 'none'});
  });
 
 $(".bmi-accordion").on("click", ".bmi-accordion-header", function() {
